@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Completo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Registro de Ciudadano y Puesto de Votación</h2>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul style="color: blue; font-weight: bold;">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/registro">
+        <h3>Datos Personales</h3>
+        
+        <label>Número de Identificación (Documento):</label><br>
+        <input type="text" name="documento" required><br><br>
+        
+        <label>Nombre Completo:</label><br>
+        <input type="text" name="nombre" required><br><br>
+        
+        <label>Ciudad de Residencia:</label><br>
+        <input type="text" name="ciudad"><br><br>
+        
+        <label>Teléfono:</label><br>
+        <input type="text" name="telefono"><br><br>
+
+        <h3>Asignación de Puesto</h3>
+        
+        <label>Lugar de Votación:</label><br>
+        <input type="text" name="lugar_votacion" required><br><br>
+        
+        <label>Dirección del Lugar:</label><br>
+        <input type="text" name="direccion"><br><br>
+        
+        <label>Mesa de Votación:</label><br>
+        <input type="text" name="mesa"><br><br>
+        
+        <label>Zona de Votación:</label><br>
+        <input type="text" name="zona"><br><br>
+        
+        <button type="submit">Guardar Registro</button>
+    </form>
+    
+    <br><a href="/">Volver al inicio</a>
+</body>
+</html>

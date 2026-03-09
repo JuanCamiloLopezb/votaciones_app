@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Puesto de Votación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Consultar Lugar de Votación</h2>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul style="color: red;">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/consulta">
+        <label>Número de identificación:</label><br>
+        <input type="text" name="documento" required><br><br>
+        
+        <button type="submit">Consultar</button>
+    </form>
+    
+    <br><a href="/">Volver al inicio</a>
+</body>
+</html>

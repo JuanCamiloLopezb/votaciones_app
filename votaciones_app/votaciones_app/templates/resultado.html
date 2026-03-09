@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado de Consulta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Información de Votación</h2>
+    <p><strong>Documento:</strong> {{ datos.documento }}</p>
+    <p><strong>Lugar de votación:</strong> {{ datos.lugar_votacion }}</p>
+    <p><strong>Dirección:</strong> {{ datos.direccion }}</p>
+    <p><strong>Mesa de votación:</strong> {{ datos.mesa }}</p>
+    <p><strong>Zona:</strong> {{ datos.zona }}</p>
+    
+    <br><a href="/consulta">Realizar otra consulta</a> | <a href="/">Volver al inicio</a>
+</body>
+</html>
